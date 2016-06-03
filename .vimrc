@@ -9,14 +9,24 @@ set runtimepath+=~/.vim/vimdoc-ja
 
 " 設定開始
 if dein#load_state(s:dein_dir)
-   let g:rc_dir       = expand('~/.vim/dein/rc')
-   let s:toml         = g:rc_dir . '/dein.toml'
-   let s:lazy_toml    = g:rc_dir . '/dein_lazy.toml'
-   call dein#begin(s:dein_dir,  [s:toml , s:lazy_toml])
+"   let g:rc_dir       = expand('~/.vim/dein/rc')
+"   let s:toml         = g:rc_dir . '/dein.toml'
+"   let s:lazy_toml    = g:rc_dir . '/dein_lazy.toml'
+"   call dein#begin(s:dein_dir,  [s:toml , s:lazy_toml])
+
+    call dein#begin(s:dein_dir)
+
+
+    call dein#add('Shougo/dein.vim')
+"   call dein#add('Shougo/neosnippet.vim')
+"   call dein#add('Shougo/neosnippet-snippets')
+"   call dein#add('Shougo/neocomplete.vim')
+    call dein#add('thinca/vim-quickrun')
+"   call dein#add('NigoroJr/rsense')
 
 " TOML を読み込み、キャッシュしておく
-   call dein#load_toml(s:toml,      {'lazy': 0})
-   call dein#load_toml(s:lazy_toml, {'lazy': 1})
+"   call dein#load_toml(s:toml,      {'lazy': 0})
+"   call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
 " 設定終了
    call dein#end()
@@ -28,10 +38,13 @@ if dein#check_install()
    call dein#install()
 endif
 
-filetype plugin on
+" filetype plugin on
+
+" let g:rsenseHome = expand('~/.vim/dein/repos/github.com/NigoroJr/rsense')
+" let g:rsenseUseOmniFunc = 1
 
 " その他の設定
-set mouse=
+set mouse=n
 colorscheme desert
 syntax on
 set nohlsearch
