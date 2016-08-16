@@ -73,6 +73,7 @@ set expandtab
 set autoindent
 set smartindent
 nnoremap Y y$
+nmap Q <Plug>(quickrun)
 
 augroup fileTypeIndent
     autocmd!
